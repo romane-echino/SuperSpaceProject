@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://cu4f47evnka61"]
+[gd_scene load_steps=2 format=3 uid="uid://cu4f47evnka61"]
+
+[ext_resource type="SpriteFrames" uid="uid://cdetop7rof3tg" path="res://assets/character/space.aseprite" id="1_ppbmm"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = ExtResource("1_ppbmm")
+animation = &"Idle"
+frame_progress = 0.354198
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)
