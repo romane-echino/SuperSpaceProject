@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsm1ftivd6ofk"]
+
+[ext_resource type="Script" path="res://MPManager.gd" id="1_rt25i"]
+
+[node name="MpScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rt25i")
+
+[node name="Host" type="Button" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 195.0
+offset_right = 192.0
+offset_bottom = 237.0
+text = "Host"
+
+[node name="Nick" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 143.0
+offset_right = 451.0
+offset_bottom = 180.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 150.0
+offset_right = 84.0
+offset_bottom = 173.0
+text = "Name"
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 193.0
+offset_right = 527.0
+offset_bottom = 239.0
+text = "Start game"
+
+[node name="Join" type="Button" parent="."]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 194.0
+offset_right = 365.0
+offset_bottom = 237.0
+text = "Join"
+
+[connection signal="button_down" from="Host" to="." method="_on_host_button_down"]
+[connection signal="button_down" from="Start" to="." method="_on_start_button_down"]
+[connection signal="button_down" from="Join" to="." method="_on_join_button_down"]

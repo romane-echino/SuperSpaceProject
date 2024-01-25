@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhfjnva5jovvt"]
+
+[ext_resource type="SpriteFrames" uid="uid://cdetop7rof3tg" path="res://assets/character/space.aseprite" id="1_0vmqf"]
+[ext_resource type="Script" path="res://PlayerPrefab.gd" id="1_rmjyh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m3c0r"]
+radius = 4.0
+height = 10.0
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_8jwyp"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="PlayerPrefab" type="CharacterBody2D"]
+script = ExtResource("1_rmjyh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_m3c0r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_0vmqf")
+animation = &"Idle"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_8jwyp")
